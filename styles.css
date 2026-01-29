@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(https://i.redd.it/d2hd73xxwvaa1.jpg) no-repeat;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container and Forms */
+.container {
+  position: relative;
+  width: 350px;
+  height: 400px;
+  overflow: hidden;
+  border-color: #2575fc;
+  background: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border-radius: 10px;
+  padding: 40px;
+  transition: 0.5s;
+}
+
+.form-box.signup {
+  left: 100%;
+}
+
+.container.active .login {
+  left: -100%;
+}
+
+.container.active .signup {
+  left: 0;
+}
+
+/* Input Box Styling */
+.input-box {
+  position: relative;
+  margin: 20px 0;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px;
+  padding-left: 35px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.input-box i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #333;
+}
+
+/* Button Styling */
+.btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #044178;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+.btn:hover {
+  background-color: #3189ed;
+}
+
+.switch {
+  text-align: center;
+  margin-top: 15px;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.switch a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.remenber {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+/* Background Elements Styling */
+.bg-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.bg-elements i {
+  position: absolute;
+  font-size: 2rem;
+  color:white;
+  animation: animate 5s linear infinite;
+}
+

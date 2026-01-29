@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  background-size: cover;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.main-heading {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 5px black;
+  user-select: none;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 480px;
+}
+
+.grid-box {
+  height: 140px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid #fff;
+  border-radius: 15px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  user-select: none;
+}
+
+.grid-box:hover,
+.grid-box:focus {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.07);
+  outline: none;
+}
+
+.icon {
+  font-size: 50px;
+  margin-bottom: 12px;
+}
+
+.slide-panel {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  max-width: 420px;
+  height: 100%;
+  background-color: #111;
+  color: white;
+  overflow-y: auto;
+  padding: 30px 25px 50px;
+  box-shadow: -3px 0 15px rgba(0, 0, 0, 0.8);
+  transition: right 0.4s ease-in-out;
+  z-index: 100;
+}
+
+.slide-panel.active {
+  right: 0;
+}
+
+.close-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  font-weight: 700;
+}
+
+#timerDisplay {
+  font-size: 56px;
+  margin: 25px 0 40px;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+}
+
+button {
+  background-color: #28a745;
+  border: none;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.25s ease;
+  user-select: none;
+  margin-right: 10px;
+}
+
+button:hover,
+button:focus {
+  background-color: #218838;
+  outline: none;
+}
+
+
+#incompleteTasksList,
+#taskList {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+#incompleteTasksList li,
+#taskList li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  user-select: none;
+  cursor: default;
+}
+
+input[type='text'] {
+  width: 100%;
+  padding: 10px 14px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+input[type='text']:focus {
+  box-shadow: 0 0 5px #28a745;
+}
+
+.task-buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+  gap: 10px;
+}
+
+/* Calendar styles */
+.calendar-controls {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+select {
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+#calendarTable {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  user-select: none;
+}
+
+#calendarTable th,
+#calendarTable td {
+  border: 1px solid #444;
+  padding: 12px 6px;
+  text-align: center;
+  color: white;
+}
+
+#calendarTable td.empty {
+  background-color: transparent;
+  cursor: default;
+}
+
+#calendarTable td.today {
+  background-color: #28a745;
+  font-weight: 700;
+  border-radius: 6px;
+  color: white;
+}
+
+#dashboardPanel button#logoutBtn {
+  background-color: #dc3545; /* red for logout */
+  padding: 10px 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  transition: background-color 0.3s ease;
+  margin-top: auto; 
+}
+
+#dashboardPanel button#logoutBtn:hover,
+#dashboardPanel button#logoutBtn:focus {
+  background-color: #b02a37;
+  outline: none;
+}
+
+#dashboardPanel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: white;
+  padding: 20px;
+}
